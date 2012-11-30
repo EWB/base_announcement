@@ -101,6 +101,7 @@ function base_announcement_strongarm() {
   $strongarm->name = 'node_options_base_announcement';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_base_announcement'] = $strongarm;
 
