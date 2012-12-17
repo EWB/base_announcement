@@ -29,7 +29,7 @@ function base_announcement_node_info() {
     'base_announcement' => array(
       'name' => t('Announcement'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Use <em>Announcement</em> for time-sensitive content like news, press releases or general postings.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
