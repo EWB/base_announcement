@@ -19,6 +19,7 @@ features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
 features[field][] = comment-comment_node_base_announcement-comment_body
 features[field][] = node-base_announcement-body
+features[field][] = node-base_announcement-field_announcement_archive_date
 features[field][] = node-base_announcement-field_announcement_images
 features[field][] = node-base_announcement-field_resource_type
 features[field][] = node-base_announcement-field_splash_image

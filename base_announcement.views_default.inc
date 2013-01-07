@@ -134,6 +134,16 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  /* Filter criterion: Content: Archive Date (field_announcement_archive_date) */
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['id'] = 'field_announcement_archive_date_value';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['table'] = 'field_data_field_announcement_archive_date';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['field'] = 'field_announcement_archive_date_value';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['expose']['operator_id'] = 'field_announcement_archive_date_value_op';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['expose']['label'] = 'Archive Date (field_announcement_archive_date)';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['expose']['operator'] = 'field_announcement_archive_date_value_op';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['expose']['identifier'] = 'field_announcement_archive_date_value';
+  $handler->display->display_options['filters']['field_announcement_archive_date_value']['default_date'] = 'now';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -142,6 +152,7 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['row_class'] = 'block-announcements';
   $handler->display->display_options['style_options']['class'] = 'announcement-slider';
+  $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'none';
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
@@ -183,7 +194,7 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 1;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['nowrap'] = 1;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '3';
+  $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '4';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
@@ -207,7 +218,7 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['fields']['field_announcement_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_announcement_images']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_announcement_images']['settings'] = array(
-    'image_style' => '220-147',
+    'image_style' => '180-120',
     'image_link' => 'content',
   );
   /* Field: Content: Body */

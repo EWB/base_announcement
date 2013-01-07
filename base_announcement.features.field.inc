@@ -167,7 +167,112 @@ function base_announcement_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-base_announcement-field_announcement_archive_date'.
+  $fields['node-base_announcement-field_announcement_archive_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_announcement_archive_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'repeat' => '0',
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'base_announcement',
+      'deleted' => '0',
+      'description' => 'Announcement\'s will be removed from recent news lists & blocks after the specified date. ',
+      'display' => array(
+        'announcements' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_repeat_rule' => 'show',
+          ),
+          'type' => 'date_default',
+          'weight' => 6,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_announcement_archive_date',
+      'label' => 'Archive Date',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'strtotime',
+        'default_value2' => 'same',
+        'default_value_code' => '+90 days',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'M j Y - g:i:sa',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'repeat_collapsed' => 0,
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '10',
       ),
     ),
   );
@@ -235,11 +340,11 @@ function base_announcement_field_default_fields() {
             'colorbox_caption_custom' => '',
             'colorbox_gallery' => 'post',
             'colorbox_gallery_custom' => '',
-            'colorbox_image_style' => 'large',
+            'colorbox_image_style' => 'jumbo',
             'colorbox_node_style' => '320',
           ),
           'type' => 'colorbox',
-          'weight' => '1',
+          'weight' => '-1',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -261,26 +366,27 @@ function base_announcement_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_announcement_images',
       'label' => 'Images',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'alt_field' => 0,
+        'alt_field' => 1,
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
-        'title_field' => 0,
+        'title_field' => 1,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'image',
         'settings' => array(
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -341,7 +447,7 @@ function base_announcement_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '10',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -424,7 +530,7 @@ function base_announcement_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '13',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -462,7 +568,7 @@ function base_announcement_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -524,7 +630,7 @@ function base_announcement_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -613,7 +719,7 @@ function base_announcement_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -650,6 +756,8 @@ function base_announcement_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Announcement\'s will be removed from recent news lists & blocks after the specified date. ');
+  t('Archive Date');
   t('Body');
   t('Comment');
   t('Images');
