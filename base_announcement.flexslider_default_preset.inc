@@ -26,7 +26,7 @@ function base_announcement_flexslider_default_presets() {
     'animationLoop' => 0,
     'randomize' => 0,
     'slideToStart' => 0,
-    'directionNav' => 1,
+    'directionNav' => 0,
     'controlNav' => 1,
     'keyboardNav' => 1,
     'mousewheel' => 1,
