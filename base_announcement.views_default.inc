@@ -221,6 +221,8 @@ function base_announcement_views_default_views() {
     'image_style' => '180-120',
     'image_link' => 'content',
   );
+  $handler->display->display_options['fields']['field_announcement_images']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_announcement_images']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
