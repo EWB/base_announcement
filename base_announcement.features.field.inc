@@ -216,17 +216,9 @@ function base_announcement_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_repeat_rule' => 'show',
-          ),
-          'type' => 'date_default',
-          'weight' => 6,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'above',

@@ -92,6 +92,9 @@ function base_announcement_strongarm() {
       'announcements' => array(
         'custom_settings' => TRUE,
       ),
+      'database_link' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
