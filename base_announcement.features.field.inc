@@ -326,16 +326,12 @@ function base_announcement_field_default_fields() {
         ),
         'full' => array(
           'label' => 'hidden',
-          'module' => 'colorbox',
+          'module' => 'flexslider_fields',
           'settings' => array(
-            'colorbox_caption' => 'auto',
-            'colorbox_caption_custom' => '',
-            'colorbox_gallery' => 'post',
-            'colorbox_gallery_custom' => '',
-            'colorbox_image_style' => 'jumbo',
-            'colorbox_node_style' => '320',
+            'flexslider_optionset' => 'basic',
+            'flexslider_reference_img_src' => NULL,
           ),
-          'type' => 'colorbox',
+          'type' => 'flexslider',
           'weight' => '-1',
         ),
         'search_result' => array(
