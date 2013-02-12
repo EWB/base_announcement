@@ -100,6 +100,9 @@ function base_announcement_ds_layout_settings_info() {
       'body' => 'right',
       'node_link' => 'right',
     ),
+    'limit' => array(
+      'field_announcement_images' => '1',
+    ),
     'classes' => array(
       'layout_class' => array(
         '' => '',
