@@ -177,15 +177,13 @@ function base_announcement_ds_layout_settings_info() {
         0 => 'field_announcement_images',
         1 => 'body',
         2 => 'links',
-        3 => 'field_subjects',
-        4 => 'field_tags',
+        3 => 'field_tags',
       ),
     ),
     'fields' => array(
       'field_announcement_images' => 'ds_content',
       'body' => 'ds_content',
       'links' => 'ds_content',
-      'field_subjects' => 'ds_content',
       'field_tags' => 'ds_content',
     ),
     'classes' => array(
