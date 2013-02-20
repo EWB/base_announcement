@@ -74,6 +74,10 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -272,6 +276,7 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -293,6 +298,71 @@ function base_announcement_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Related Announcements */
+  $handler = $view->new_display('block', 'Related Announcements', 'block_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '%1 Announcements';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'news-related-subject';
+  $handler->display->display_options['display_description'] = 'Designed as a side companion block';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Subjects (field_subjects) */
+  $handler->display->display_options['arguments']['field_subjects_tid']['id'] = 'field_subjects_tid';
+  $handler->display->display_options['arguments']['field_subjects_tid']['table'] = 'field_data_field_subjects';
+  $handler->display->display_options['arguments']['field_subjects_tid']['field'] = 'field_subjects_tid';
+  $handler->display->display_options['arguments']['field_subjects_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_subjects_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_subjects_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_subjects_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_subjects_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_subjects_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_subjects_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_subjects_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_subjects_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_subjects_tid']['validate_options']['vocabularies'] = array(
+    'library_subjects' => 'library_subjects',
+  );
+  $handler->display->display_options['arguments']['field_subjects_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_subjects_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'base_announcement' => 'base_announcement',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['block_description'] = 'Related Announcements';
   $export['base_announcement'] = $view;
 
   return $export;
