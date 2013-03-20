@@ -95,6 +95,9 @@ function base_announcement_strongarm() {
       'database_link' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
