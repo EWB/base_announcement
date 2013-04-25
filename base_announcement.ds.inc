@@ -80,25 +80,21 @@ function base_announcement_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'base_announcement';
   $ds_layout->view_mode = 'announcements';
-  $ds_layout->layout = 'ds_2col_stacked';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'header' => array(
+      'ds_content' => array(
         0 => 'title',
-      ),
-      'left' => array(
         1 => 'field_announcement_images',
-      ),
-      'right' => array(
         2 => 'body',
         3 => 'node_link',
       ),
     ),
     'fields' => array(
-      'title' => 'header',
-      'field_announcement_images' => 'left',
-      'body' => 'right',
-      'node_link' => 'right',
+      'title' => 'ds_content',
+      'field_announcement_images' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'limit' => array(
       'field_announcement_images' => '1',
@@ -107,18 +103,9 @@ function base_announcement_ds_layout_settings_info() {
       'layout_class' => array(
         '' => '',
       ),
-      'left' => array(
-        'announcement-image' => 'announcement-image',
-      ),
-      'right' => array(
-        'announcement-teaser' => 'announcement-teaser',
-      ),
     ),
     'wrappers' => array(
-      'header' => 'div',
-      'left' => 'div',
-      'right' => 'div',
-      'footer' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
