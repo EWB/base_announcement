@@ -56,6 +56,7 @@ function base_announcement_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'micro-slide',
   );
 
   // Exported image style: micro-thumb.
@@ -78,6 +79,7 @@ function base_announcement_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'micro-thumb',
   );
 
   return $styles;
